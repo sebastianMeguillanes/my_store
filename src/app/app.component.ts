@@ -9,26 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   imgParent = 'https://www.w3schools.com/howto/img_avatar.png'
   showImage = true;
-  products:  Product[] =[
-    {
-      id: '1',
-      nombre: 'producto1',
-      precio: 20,
-      image: '../../../assets/images/default.png'
-    },
-    {
-      id: '2',
-      nombre: 'producto2',
-      precio: 30,
-      image: '../../../assets/images/default.png'
-    },
-    {
-      id: '3',
-      nombre: 'producto3',
-      precio: 40,
-      image: '../../../assets/images/default.png'
-    }
-  ]
+
   onLoaded(img: string){
     console.log('padre',img);
   }

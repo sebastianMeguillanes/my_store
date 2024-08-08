@@ -1,0 +1,113 @@
+.show-mobile {
+  display: block;
+  box-shadow: 0px 2px 5px rgb(black, .2);
+  > div {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      border: 0;
+      background: transparent;
+    }
+  }
+  .side-menu{
+   position: fixed;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   background: white;
+   display: flex;
+   flex-direction: column;
+   transform: translateX(-100%);
+   justify-content: flex-start;
+   transition: all ease-out .5s;
+   &.active {
+    transform: translateX(0);
+   }
+  }
+}
+.hide-mobile {
+  display: none;
+  box-shadow: 0px 2px 5px rgb(black, .2);
+  > div {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    margin-right: 1em;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    ul {
+      display: flex;
+      list-style: none;
+      a {
+        margin: 0 .2em;
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+  .info {
+    display: flex;
+    align-items: center;
+    .account {
+      margin-right: .5em;
+    }
+  }
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .show-mobile {
+    display: none;
+  }
+  .hide-mobile {
+    display: block;
+  }
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+  .show-mobile {
+    display: none;
+  }
+  .hide-mobile {
+    display: block;
+  }
+}
+.counter {
+  position: absolute;
+  right: 5px;
+  top: 4px;
+  color: #fefefe;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  background-color: #458f4b;
+}
+.shopping-cart-container {
+  position: relative;
+  display: block;
+  .counter {
+    position: absolute;
+    right: -12px;
+    top: -4px;
+    color: #fefefe;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    background-color: #458f4b;
+  }
+}

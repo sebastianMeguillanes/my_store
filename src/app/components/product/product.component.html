@@ -1,3 +1,7 @@
-<img width="200" [src]="product.image" alt="">
-<h2>{{ product.precio }}</h2>
-<p> {{ product.nombre }}</p>
+<app-img *ngIf="product.images.length > 0" [img] = "product.images[0]"> </app-img>
+<h2>{{ product.price }}</h2>
+<p> {{ product.title }}</p>
+<p appHighlight>
+  {{ product.description }}
+</p>
+<button (click)="onAddToCard()">Añadir</button>

@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter, AfterViewInit, OnDestro
   styleUrls: ['./img.component.scss']
 })
 export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
-  img: string = '';
+  img = '';
   @Input('img')
   set changeImg(img: string){
     this.img = img;
@@ -16,8 +16,8 @@ export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy
   }
   @Output() loaded = new EventEmitter<string>();
   imageDefault=  " "
-  counter = 0;
-  counterFn: number |  undefined;
+  // counter = 0;
+  // counterFn: number |  undefined;
 
 
   constructor() {
@@ -37,9 +37,9 @@ export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy
     //corre antes de renderizar
     //corre una vez
     console.log('ngOnInit', 'imgValue  ',  this.img);
-    this.counterFn = window.setInterval(() => {
-      this.counter++;
-    }, 1000);
+    // this.counterFn = window.setInterval(() => {
+    //   this.counter++;
+    // }, 1000);
 
   }
 
@@ -53,7 +53,7 @@ export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy
   ngOnDestroy(){
     //corre cuando se destruye el componente
     console.log('ngOnDestroy');
-    window.clearInterval(this.counterFn);
+    // window.clearInterval(this.counterFn);
   }
 
   imgError(){

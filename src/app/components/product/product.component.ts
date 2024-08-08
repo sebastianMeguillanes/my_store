@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { Product } from '../../models/product.model'
 
 @Component({
@@ -10,8 +10,24 @@ export class ProductComponent {
 
   @Input() product: Product = {
     id: '',
-    nombre: '',
-    precio: 0,
-    image: '../../../assets/images/default.png'
+    title: '',
+    price: 0,
+    images: [],
+    description: '',
+    category: {
+      id: '',
+      name: ''
+    }
+  }
+
+  @Output() addedProduct = new EventEmitter<Product>();
+
+  constructor  () { }
+
+  ngOnInit(): void {
+  }
+
+  onAddToCard(){
+    this.addedProduct.emit(this.product);
   }
 }
